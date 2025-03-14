@@ -41,11 +41,11 @@ def get_hacker_news_data(num_articles,csv_file_name):
     df = build_df_from_id_list(ids_list)
     #This is if you want a timestamp sufix on file name. Might be useful later
     #csv_file_name = csv_file_name + '_' + str(datetime.now()).split('.')[0].replace(' ','T').replace(':','-')
-    df.to_csv(f'./data/raw/{csv_file_name}',index=False)
+    df.to_csv(f'./data/raw/{csv_file_name}.csv',index=False)
 
 # Get Live Hacker New Data:
 ## 1. enter number of articles you would like to get (up to 500 from the most recent article)
 ## 2. Enter a file name for csv. 
-num_of_top_artciles_to_get = 5
+num_of_top_artciles_to_get = 100
 csv_file_name = 'hn_data'
 get_hacker_news_data(num_of_top_artciles_to_get,csv_file_name)
